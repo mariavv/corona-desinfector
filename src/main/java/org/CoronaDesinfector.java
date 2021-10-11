@@ -2,8 +2,8 @@ package org;
 
 public class CoronaDesinfector {
 
-    private Annauncer announcer = new ConsoleAnnauncer();
-    private Policeman policeman = new PolicemanImpl();
+    private Annauncer announcer = ObjectFactory.getInstance().createObject(Annauncer.class);
+    private Policeman policeman = ObjectFactory.getInstance().createObject(Policeman.class);
 
     public void start(Room room) {
         announcer.announce("всем выйти из комнаты");
